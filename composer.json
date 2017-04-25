@@ -1,0 +1,14 @@
+{
+    "name": "studylara/studylara",
+    "description": "Chai study laravel",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chai",
+            "email": "chaichaichia@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
