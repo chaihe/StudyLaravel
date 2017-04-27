@@ -12,6 +12,13 @@
 
 @section('footer')
     <h1>this is footer</h1>
+    <ul>
+        @foreach($nameArr as $name )
+        <li>{{$name}}</li>
+        @endforeach
+    </ul>
 @stop
+
+
 
 

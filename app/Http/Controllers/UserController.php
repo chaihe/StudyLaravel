@@ -13,6 +13,6 @@ class UserController extends Controller
         $nameArr['first'] = 'chai';
         $nameArr['last'] = 'zhi';
 
-        return view('user.chai',$nameArr)->with('age',123);
+        return view('user.chai',compact('nameArr'))->with('age',123);
     }
 }
