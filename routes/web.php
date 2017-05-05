@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('/chaii', 'UserController@index');
+
+Route::get('/articles', 'ArticlesController@index');
