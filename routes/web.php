@@ -17,4 +17,6 @@ Route::get('/', function () {
 
 Route::get('/chaii', 'UserController@index');
 
+//文章
 Route::get('/articles', 'ArticlesController@index');
+Route::get('/articles/{id}', 'ArticlesController@show');

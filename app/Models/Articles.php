@@ -23,7 +23,6 @@ namespace App\Models;
  */
 class Articles extends \Eloquent
 {
-
     protected $table = 'articles';
 
 }
