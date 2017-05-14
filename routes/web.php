@@ -15,8 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/chaii', 'UserController@index');
+Route::get('/chai', 'UserController@index');
 
 //文章
 Route::get('/articles', 'ArticlesController@index');
+
+Route::post('/articles', 'ArticlesController@save');
+
+Route::get('/articles/create', 'ArticlesController@create');
+
 Route::get('/articles/{id}', 'ArticlesController@show');

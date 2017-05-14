@@ -1,28 +1,11 @@
 <?php
 
-
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 
-/**
- * App\Models\Articles
- *
- * @mixin \Eloquent
- * @property int $id
- * @property string $title
- * @property string $content
- * @property string $published_at
- * @property \Carbon\Carbon $created_at
- * @property \Carbon\Carbon $updated_at
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Articles whereContent($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Articles whereCreatedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Articles whereId($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Articles wherePublishedAt($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Articles whereTitle($value)
- * @method static \Illuminate\Database\Query\Builder|\App\Models\Articles whereUpdatedAt($value)
- */
-class Articles extends \Eloquent
+class Articles extends Model
 {
-    protected $table = 'articles';
-
+    //
+    protected $fillable = ['title','content','published_at'];
 }

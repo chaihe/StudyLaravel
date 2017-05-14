@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Articles;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -29,7 +30,10 @@ class ArticlesController extends Controller
 ////        echo json_encode($name->toArray());
 //        exit;
 
-        $articles = Articles::all();
+//        $articles = Articles::all();
+
+        //文章倒序
+        $articles = Articles::latest()->get();
         return view('articles.index',compact('articles'));
     }
 
@@ -45,5 +49,24 @@ class ArticlesController extends Controller
         $article = Articles::findOrFail($id);
 
         return view("articles.showContent",compact('article'));
+    }
+
+    public function create()
+    {
+        return view('articles.create');
+    }
+
+    public function save(Request $request)
+    {
+//        dd($request->all());
+
+        //获取某一个值
+        dd($request->get('title'));
+
+        $input = $request->all();
+        $input['published_at']=Carbon::now();
+        Articles::create($input);
+
+        return redirect('/articles');
     }
 }
