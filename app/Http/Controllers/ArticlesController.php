@@ -41,7 +41,7 @@ class ArticlesController extends Controller
 //        $articles = Articles::all();
 //        dd($articles, $articles->where('id', 1)->first());
         //文章倒序
-        $articles = Articles::latest()->get();
+        $articles = Articles::latest()->where('published_at','<=',Carbon::now())->get();
         $articles->toJson();
         return view('articles.index',compact('articles'));
     }
