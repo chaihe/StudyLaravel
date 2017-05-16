@@ -30,10 +30,19 @@ class ArticlesController extends Controller
 ////        echo json_encode($name->toArray());
 //        exit;
 
+//        $a = collect([
+//            ['a' => 1],
+//            ['b' => 2],
+//
+//        ]);
+//
+//        dd($a, $a->where('a', 1));
+//
 //        $articles = Articles::all();
-
+//        dd($articles, $articles->where('id', 1)->first());
         //文章倒序
         $articles = Articles::latest()->get();
+        $articles->toJson();
         return view('articles.index',compact('articles'));
     }
 
@@ -47,7 +56,6 @@ class ArticlesController extends Controller
 //            abort(404);
 //        }
         $article = Articles::findOrFail($id);
-
         return view("articles.showContent",compact('article'));
     }
 
@@ -61,12 +69,13 @@ class ArticlesController extends Controller
 //        dd($request->all());
 
         //获取某一个值
-        dd($request->get('title'));
+//        dd($request->get('title'));
 
         $input = $request->all();
-        $input['published_at']=Carbon::now();
+//        $input['published_at']=Carbon::now();
         Articles::create($input);
 
         return redirect('/articles');
     }
+
 }
