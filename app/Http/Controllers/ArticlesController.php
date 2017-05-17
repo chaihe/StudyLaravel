@@ -54,7 +54,7 @@ class ArticlesController extends Controller
 //            abort(404);
 //        }
         $article = Articles::findOrFail($id);
-        dd($article->created_at->diffForHumans());
+        dd($article->published_at->diffForHumans());
         return view("articles.showContent",compact('article'));
     }
 

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 </head>
-<body>
+<body style="width: 1200px;margin:0 auto;">
     @yield('content')
     @yield('footer')
 </body>
