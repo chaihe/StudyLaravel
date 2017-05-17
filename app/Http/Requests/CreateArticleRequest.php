@@ -28,6 +28,6 @@ class CreateArticleRequest extends FormRequest
             //
             'title' => 'required|min:3',
             'content' => 'required|min:10'
-        ];
+        ]; 
     }
 }
