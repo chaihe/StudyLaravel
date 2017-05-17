@@ -71,6 +71,9 @@ class ArticlesController extends Controller
         //获取某一个值
 //        dd($request->get('title'));
 
+        //添加验证条件
+//        this->validate($request,['title'=>'required','contend'=>'required']);
+
         $input = $request->all();
 //        $input['published_at']=Carbon::now();
         Articles::create($input);

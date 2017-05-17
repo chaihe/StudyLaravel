@@ -8,9 +8,14 @@
     <title>PHP</title>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+    <style>
+        #main{ margin:0 auto; width:80%; }
+    </style>
 </head>
-<body style="width: 1200px;margin:0 auto;">
-    @yield('content')
-    @yield('footer')
+<body>
+    <div id="main">
+        @yield('content')
+        @yield('footer')
+    </div>
 </body>
 </html>

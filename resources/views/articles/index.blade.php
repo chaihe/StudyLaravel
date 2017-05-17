@@ -9,9 +9,9 @@
 {{--<h1>my age {{$age}}</h1>--}}
 {{--@endif--}}
 
-    <div style="width:1200px; height:70px;">
-        <div style="width:300px;height:70px;float:left;"><h1>Articles List</h1></div>
-        <div style="width:200px;height:70px; float:right;text-align: right;"><h1><a href="articles/create">发布文章</a></h1></div>
+    <div style="width:80%; height:70px;">
+        <div style="width:30%;height:70px;float:left;"><h1>Articles List</h1></div>
+        <div style="width:30%px;height:70px; float:right;text-align: right;"><h1><a href="articles/create">发布文章</a></h1></div>
     </div>
     <hr>
 
