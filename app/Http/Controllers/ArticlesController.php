@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateArticleRequest;
 use App\Models\Articles;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -63,7 +64,7 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
 
-    public function save(Request $request)
+    public function save(CreateArticleRequest $request)
     {
 //        dd($request->all());
 

@@ -23,6 +23,14 @@
     </div>
 
     {!! Form::submit('发表文章',['class'=>'btn btn-primary form-control' ]) !!}
-
     {!! Form::close() !!}
+
+    @if($errors->any())
+        <br/>
+        <ul class="list-group">
+            @foreach($errors->all() as $error)
+                <li class="list-group-item list-group-item-danger">{{$error}}</li>
+            @endforeach
+        </ul>
+    @endif
 @stop
