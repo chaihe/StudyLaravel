@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Articles;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -41,8 +40,7 @@ class ArticlesController extends Controller
 //        $articles = Articles::all();
 //        dd($articles, $articles->where('id', 1)->first());
         //文章倒序
-        $articles = Articles::latest()->where('published_at','<=',Carbon::now())->get();
-        $articles->toJson();
+        $articles = Articles::latest()->published()->get();
         return view('articles.index',compact('articles'));
     }
 
@@ -56,6 +54,7 @@ class ArticlesController extends Controller
 //            abort(404);
 //        }
         $article = Articles::findOrFail($id);
+        dd($article->created_at->diffForHumans());
         return view("articles.showContent",compact('article'));
     }
 

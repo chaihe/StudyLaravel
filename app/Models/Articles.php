@@ -14,4 +14,11 @@ class Articles extends \Eloquent
     {
         $this->attributes['published_at']=Carbon::createFromFormat('Y-m-d',$date);
     }
+
+    public function scopePublished($query)
+    {
+//        dd($query);
+        $query->where('published_at','<=',Carbon::now());
+    }
+
 }
