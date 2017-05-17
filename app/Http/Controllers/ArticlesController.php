@@ -55,7 +55,7 @@ class ArticlesController extends Controller
 //            abort(404);
 //        }
         $article = Articles::findOrFail($id);
-        dd($article->published_at->diffForHumans());
+//        dd($article->published_at->diffForHumans());  几秒前
         return view("articles.showContent",compact('article'));
     }
 
@@ -64,7 +64,7 @@ class ArticlesController extends Controller
         return view('articles.create');
     }
 
-    public function save(CreateArticleRequest $request)
+    public function store(CreateArticleRequest $request)
     {
 //        dd($request->all());
 
@@ -77,6 +77,20 @@ class ArticlesController extends Controller
         $input = $request->all();
 //        $input['published_at']=Carbon::now();
         Articles::create($input);
+
+        return redirect('/articles');
+    }
+
+    public function edit($id)
+    {
+        $article = Articles::findOrFail($id);
+        return view('articles.edit',compact('article'));
+    }
+
+    public function update(CreateArticleRequest $request, $id)
+    {
+        $article = Articles::findOrFail($id);
+        $article->update($request->all());
 
         return redirect('/articles');
     }
