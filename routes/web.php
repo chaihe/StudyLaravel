@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/chai', 'UserController@index');
+Route::get('/chai', 'UserController@index')->middleware('throttle:4');
 
 //文章
 
