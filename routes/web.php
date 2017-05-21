@@ -18,6 +18,8 @@ Route::get('/', function () {
 Route::get('/chai', 'UserController@index')->middleware('throttle:4');
 
 //文章
+//Route::resource('/articles', 'ArticlesController');
 
-Route::resource('/articles', 'ArticlesController');
-
+Route::get('/article/{articles}',function (\App\Models\Articles $articles){
+    return $articles;
+});
